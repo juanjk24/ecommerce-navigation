@@ -1,0 +1,17 @@
+{
+  "name": "mareashop-api",
+  "version": "1.0.0",
+  "description": "Motor de navegacion de MareaShop: Composite, Strategy, Iterator, Observer y Command",
+  "private": true,
+  "type": "module",
+  "main": "app.js",
+  "scripts": {
+    "dev": "node --watch app.js",
+    "start": "node app.js",
+    "test": "node tests.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^5.2.1"
+  }
+}
