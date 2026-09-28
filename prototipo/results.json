@@ -1,0 +1,267 @@
+{
+  "generatedAt": "2026-09-28T23:49:17.201Z",
+  "node": "v24.18.0",
+  "catalog": {
+    "products": 2150,
+    "taxonomyNodes": 18,
+    "leaves": 12,
+    "families": 5,
+    "expected": {
+      "products": 2150,
+      "taxonomyNodes": 18,
+      "leaves": 12,
+      "families": 5,
+      "seed": 20260928
+    }
+  },
+  "speedup": {
+    "naiveMs": 2.6925,
+    "guidedMs": 0.4005,
+    "ratio": 6.72,
+    "minimum": 5
+  },
+  "clickReduction": {
+    "guided": 3,
+    "flat": 6,
+    "percent": 50
+  },
+  "scenarios": [
+    {
+      "id": "naive-portatiles",
+      "label": "Naive, portátiles + pro",
+      "strategy": "NaiveScanStrategy",
+      "hits": 15,
+      "expectedHits": 15,
+      "elapsedMs": 2.8383,
+      "scope": "2150 ítems",
+      "visitedNodes": 0,
+      "visitedItems": 2150,
+      "route": "barrido completo",
+      "breadcrumb": [
+        "Inicio",
+        "Electrónica",
+        "Computadores",
+        "Portátiles"
+      ]
+    },
+    {
+      "id": "guided-portatiles",
+      "label": "Guided, portátiles + pro",
+      "strategy": "GuidedStrategy",
+      "hits": 15,
+      "expectedHits": 15,
+      "elapsedMs": 0.4323,
+      "scope": "4 nodos",
+      "visitedNodes": 4,
+      "visitedItems": 250,
+      "route": "Inicio > Electrónica > Computadores > Portátiles",
+      "breadcrumb": [
+        "Inicio",
+        "Electrónica",
+        "Computadores",
+        "Portátiles"
+      ]
+    },
+    {
+      "id": "bfs-audio",
+      "label": "BFS, audio + sonyen",
+      "strategy": "BreadthFirstStrategy",
+      "hits": 50,
+      "expectedHits": 50,
+      "elapsedMs": 1.2858,
+      "scope": "rama Audio",
+      "visitedNodes": 6,
+      "visitedItems": 800,
+      "route": "Inicio > Electrónica",
+      "breadcrumb": [
+        "Inicio",
+        "Electrónica",
+        "Audio"
+      ]
+    },
+    {
+      "id": "dfs-moda",
+      "label": "DFS, moda",
+      "strategy": "DepthFirstStrategy",
+      "hits": 300,
+      "expectedHits": 300,
+      "elapsedMs": 0.4223,
+      "scope": "rama Moda",
+      "visitedNodes": 3,
+      "visitedItems": 300,
+      "route": "Inicio > Moda",
+      "breadcrumb": [
+        "Inicio",
+        "Moda"
+      ]
+    },
+    {
+      "id": "guided-tecnologia",
+      "label": "Guided, libros tecnología",
+      "strategy": "GuidedStrategy",
+      "hits": 150,
+      "expectedHits": 150,
+      "elapsedMs": 0.2127,
+      "scope": "rama Tecnología",
+      "visitedNodes": 3,
+      "visitedItems": 150,
+      "route": "Inicio > Libros > Tecnología",
+      "breadcrumb": [
+        "Inicio",
+        "Libros",
+        "Tecnología"
+      ]
+    }
+  ],
+  "assertions": [
+    {
+      "id": "catalogo",
+      "name": "El catalogo tiene la forma que exige la actividad",
+      "pass": true,
+      "checks": [
+        {
+          "label": "productos",
+          "expected": 2150,
+          "actual": 2150,
+          "pass": true
+        },
+        {
+          "label": "nodos de taxonomia",
+          "expected": 18,
+          "actual": 18,
+          "pass": true
+        },
+        {
+          "label": "hojas terminales",
+          "expected": 12,
+          "actual": 12,
+          "pass": true
+        },
+        {
+          "label": "familias",
+          "expected": 5,
+          "actual": 5,
+          "pass": true
+        }
+      ]
+    },
+    {
+      "id": "aceleracion",
+      "name": "Guided es varias veces mas rapido que el barrido lineal",
+      "pass": true,
+      "checks": [
+        {
+          "label": "razon naive/guided",
+          "expected": ">= 5",
+          "actual": 6.72,
+          "pass": true
+        }
+      ]
+    },
+    {
+      "id": "nodos",
+      "name": "La ruta guiada visita menos nodos que el inventario completo",
+      "pass": true,
+      "checks": [
+        {
+          "label": "nodos visitados (guided)",
+          "expected": 4,
+          "actual": 4,
+          "pass": true
+        },
+        {
+          "label": "items barridos (naive)",
+          "expected": 2150,
+          "actual": 2150,
+          "pass": true
+        },
+        {
+          "label": "items en la rama guiada",
+          "expected": 250,
+          "actual": 250,
+          "pass": true
+        }
+      ]
+    },
+    {
+      "id": "hits",
+      "name": "Cada escenario devuelve los hits de la Tabla 5",
+      "pass": true,
+      "checks": [
+        {
+          "label": "Naive, portátiles + pro",
+          "expected": 15,
+          "actual": 15,
+          "pass": true
+        },
+        {
+          "label": "Guided, portátiles + pro",
+          "expected": 15,
+          "actual": 15,
+          "pass": true
+        },
+        {
+          "label": "BFS, audio + sonyen",
+          "expected": 50,
+          "actual": 50,
+          "pass": true
+        },
+        {
+          "label": "DFS, moda",
+          "expected": 300,
+          "actual": 300,
+          "pass": true
+        },
+        {
+          "label": "Guided, libros tecnología",
+          "expected": 150,
+          "actual": 150,
+          "pass": true
+        }
+      ]
+    },
+    {
+      "id": "clics",
+      "name": "La ruta guiada reduce a la mitad los clics de la navegacion plana",
+      "pass": true,
+      "checks": [
+        {
+          "label": "clics guiados",
+          "expected": 3,
+          "actual": 3,
+          "pass": true
+        },
+        {
+          "label": "reduccion",
+          "expected": "50 %",
+          "actual": "50 %",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "id": "undo",
+      "name": "POST /api/undo restaura el comando navigate · electronica",
+      "pass": true,
+      "checks": [
+        {
+          "label": "etiqueta restaurada",
+          "expected": "navigate · electronica",
+          "actual": "navigate · electronica",
+          "pass": true
+        },
+        {
+          "label": "categoria restaurada",
+          "expected": "electronica",
+          "actual": "electronica",
+          "pass": true
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "total": 6,
+    "passed": 6,
+    "failed": 0
+  }
+}
