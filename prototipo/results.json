@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-28T23:49:17.201Z",
+  "generatedAt": "2026-09-29T00:11:50.233Z",
   "node": "v24.18.0",
   "catalog": {
     "products": 2150,
@@ -15,9 +15,9 @@
     }
   },
   "speedup": {
-    "naiveMs": 2.6925,
-    "guidedMs": 0.4005,
-    "ratio": 6.72,
+    "naiveMs": 2.5229,
+    "guidedMs": 0.3778,
+    "ratio": 6.68,
     "minimum": 5
   },
   "clickReduction": {
@@ -32,7 +32,7 @@
       "strategy": "NaiveScanStrategy",
       "hits": 15,
       "expectedHits": 15,
-      "elapsedMs": 2.8383,
+      "elapsedMs": 2.643,
       "scope": "2150 ítems",
       "visitedNodes": 0,
       "visitedItems": 2150,
@@ -50,7 +50,7 @@
       "strategy": "GuidedStrategy",
       "hits": 15,
       "expectedHits": 15,
-      "elapsedMs": 0.4323,
+      "elapsedMs": 0.422,
       "scope": "4 nodos",
       "visitedNodes": 4,
       "visitedItems": 250,
@@ -68,7 +68,7 @@
       "strategy": "BreadthFirstStrategy",
       "hits": 50,
       "expectedHits": 50,
-      "elapsedMs": 1.2858,
+      "elapsedMs": 1.1905,
       "scope": "rama Audio",
       "visitedNodes": 6,
       "visitedItems": 800,
@@ -85,7 +85,7 @@
       "strategy": "DepthFirstStrategy",
       "hits": 300,
       "expectedHits": 300,
-      "elapsedMs": 0.4223,
+      "elapsedMs": 0.387,
       "scope": "rama Moda",
       "visitedNodes": 3,
       "visitedItems": 300,
@@ -101,7 +101,7 @@
       "strategy": "GuidedStrategy",
       "hits": 150,
       "expectedHits": 150,
-      "elapsedMs": 0.2127,
+      "elapsedMs": 0.2023,
       "scope": "rama Tecnología",
       "visitedNodes": 3,
       "visitedItems": 150,
@@ -153,7 +153,7 @@
         {
           "label": "razon naive/guided",
           "expected": ">= 5",
-          "actual": 6.72,
+          "actual": 6.68,
           "pass": true
         }
       ]

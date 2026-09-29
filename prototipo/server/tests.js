@@ -42,7 +42,7 @@ const atLeast = (label, actual, minimum) => ({ label, actual, expected: `>= ${mi
 
 /* 1. Catalogo: forma del Composite. */
 const summary = engine.catalogSummary;
-assert('catalogo', 'El catalogo tiene la forma que exige la actividad', [
+assert('catalogo', 'El catalogo tiene la forma esperada', [
     eq('productos', summary.products, CATALOG_EXPECTED.products),
     eq('nodos de taxonomia', summary.taxonomyNodes, CATALOG_EXPECTED.taxonomyNodes),
     eq('hojas terminales', summary.leaves, CATALOG_EXPECTED.leaves),
