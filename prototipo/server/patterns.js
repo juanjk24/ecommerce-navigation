@@ -1,11 +1,3 @@
-/**
- * MareaShop — Strategy, Iterator, Observer y Command.
- *
- * NavigationStrategy aisla el algoritmo de recorrido: el motor invoca
- * `traverse()` y el algoritmo cambia desde el selector de la SPA sin que
- *NavigationEngine ni el catalogo sepan que clase concreta se esta usando.
- */
-
 import { familyOf } from './catalog.js';
 
 export const PAGE_SIZE = 12;

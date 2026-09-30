@@ -1,14 +1,3 @@
-/**
- * MareaShop — Pruebas del prototipo.
- *
- * `npm test` ejecuta estas seis aserciones sobre el mismo codigo que atiende
- * GET /api/navigate y escribe prototipo/results.json con la evidencia.
- *
- * Las aserciones comprueban invariantes y razones, no milisegundos absolutos:
- * los tiempos dependen de la maquina, la relacion entre recortar la rama y
- * barrer el universo es el argumento de diseño que sí se sostiene.
- */
-
 import { writeFile } from 'node:fs/promises';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';

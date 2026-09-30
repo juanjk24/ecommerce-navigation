@@ -1,11 +1,3 @@
-/**
- * MareaShop — Catalogo como patron Composite.
- *
- * CatalogComponent es la abstraccion comun; CategoryNode agrupa hijos y
- * ProductLeaf representa el item vendible. `products()` y `find()` recorren el
- * arbol con la misma API, tanto para una familia como para una hoja.
- */
-
 const ROOT_NAME = 'Inicio';
 
 export const CATALOG_EXPECTED = {

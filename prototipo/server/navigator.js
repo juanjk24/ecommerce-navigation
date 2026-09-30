@@ -1,12 +1,3 @@
-/**
- * MareaShop — NavigationEngine.
- *
- * Orquesta el catalogo (Composite), la estrategia (Strategy), la paginacion
- * (Iterator), el bus de eventos (Observer) y el historial (Command). La API
- * Express es un adaptador: traduce HTTP a llamadas de este motor y nunca
- * recorre el arbol por su cuenta.
- */
-
 import { performance } from 'node:perf_hooks';
 
 import { buildCatalog, CATALOG_EXPECTED, normalizeText } from './catalog.js';

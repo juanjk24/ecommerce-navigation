@@ -1,11 +1,3 @@
-/**
- * MareaShop — API Express en el puerto 5050.
- *
- * Es un adaptador puro: traduce HTTP a llamadas del NavigationEngine. No
- * recorre el arbol, no filtra y no pagina. Todo eso vive en el motor, que es
- * lo que permite anadir una cuarta estrategia sin desplegar la SPA.
- */
-
 import express from 'express';
 import cors from 'cors';
 import { resolve } from 'node:path';
